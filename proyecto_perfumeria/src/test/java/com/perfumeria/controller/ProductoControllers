@@ -1,0 +1,35 @@
+package com.perfumeria.controllers;
+
+import com.perfumeria.domain.Producto;
+import com.perfumeria.service.ProductoService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/productos")
+public class Producto {
+
+    @Autowired
+    private ProductoService productoService;
+
+    @GetMapping
+    public List<Producto> listar() {
+        return productoService.listarProductos();
+    }
+
+    @PostMapping
+    public void guardar(@RequestBody Producto producto) {
+        productoService.guardarProducto(producto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id) {
+        productoService.eliminarProducto(id);
+    }
+
+    @GetMapping("/{id}")
+    public Producto obtener(@PathVariable Long id) {
+        return productoService.obtenerProducto(id);
+    }
+}
