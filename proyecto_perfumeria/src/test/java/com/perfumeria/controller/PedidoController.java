@@ -2,10 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.caso1.controller;
+package com.perfumeria.controller;
 
-import com.caso1.domain.Pedido;
-import com.caso1.service.PedidoService;
 import com.perfumeria.domain.Pedido;
 import com.perfumeria.service.PedidoService;
 import java.util.List;
