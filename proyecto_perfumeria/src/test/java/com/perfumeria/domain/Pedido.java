@@ -1,4 +1,4 @@
-package com.caso1.domain;
+package com.perfumeria.domain;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
