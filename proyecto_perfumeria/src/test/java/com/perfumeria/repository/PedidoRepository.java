@@ -1,4 +1,4 @@
-package com.caso1.repository;
+package com.perfumeria.repository;
 
 import com.perfumeria.domain.Pedido;
 import java.util.List;
