@@ -1,0 +1,34 @@
+package com.perfumeria.service;
+
+import com.perfumeria.domain.Producto;
+import com.perfumeria.repository.ProductoRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ProductoServiceImpl implements ProductoService {
+
+    @Autowired
+    private ProductoRepository productoRepository;
+
+    @Override
+    public List<Producto> listarProductos() {
+        return productoRepository.findAll();
+    }
+
+    @Override
+    public void guardarProducto(Producto producto) {
+        productoRepository.save(producto);
+    }
+
+    @Override
+    public void eliminarProducto(Long id) {
+        productoRepository.deleteById(id);
+    }
+
+    @Override
+    public Producto obtenerProducto(Long id) {
+        return productoRepository.findById(id).orElse(null);
+    }
+}
